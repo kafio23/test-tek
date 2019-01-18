@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title Tektest
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  body
+    header.navbar
+      .logo
+        = link_to "Spy app", 'root_path', id: "logo"
+        nav
+          ul.navbar-right
+            li
+              = link_to "Home",    'root_path'
+            li
+              = link_to "Help",    'help_path'
+            li
+              = link_to "Sign up", 'sign_up_path'
+            li
+              = link_to "Log in",  'login_path'
+      .main
+        h1.welcome Welcome Fiorella!
+        = yield
