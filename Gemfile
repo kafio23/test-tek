@@ -35,6 +35,14 @@ gem "slim-rails"
 gem 'bootstrap'
 gem 'jquery-rails'
 
+# Use Rack CORS
+gem 'rack-cors'
+
+# Serializer
+gem 'active_model_serializers'
+# JWT tokens
+gem 'jwt'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
