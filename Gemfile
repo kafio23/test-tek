@@ -29,6 +29,10 @@ gem 'bcrypt', '~> 3.1.7'
 # Slim
 gem "slim-rails"
 
+# Bootstrap and JQuery
+gem 'bootstrap'
+gem 'jquery-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

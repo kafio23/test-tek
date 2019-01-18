@@ -2,11 +2,30 @@ doctype html
 html
   head
     title Tektest
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = csrf_meta_tags
 
+    meta name="viewport" content="width=device-width, initial-scale=1"
+
   body
+    nav class="navbar navbar-expand-lg navbar-dark bg-info"
+      a class="navbar-brand" href="#"
+        | Navbar
+      button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
+        span class="navbar-toggler-icon"
+
+      div class="collapse navbar-collapse" id="navbarTogglerDemo02"
+        ul class="navbar-nav mr-auto mt-2 mt-lg-0"
+          li class="nav-item active"
+            a class="nav-link" href="#"
+              | Home
+              span class="sr-only" 
+              | (current)
+          li class="nav-item"
+            a class="nav-link" href="#"
+              | Link
+
     header.navbar
       .logo
         = link_to "Spy app", 'root_path', id: "logo"
