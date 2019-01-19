@@ -16,9 +16,10 @@ admin.save!
 
 puts "Creating common user"
 user = User.new
-user.full_name = "Peddie Dorh"
+user.full_name = "Peddie Dhor"
 user.email = "user@nosesabe.com"
 user.password = "lima4321"
 user.role = "user"
-
+# User.create(email:'user@nosesabe.com', password:'lima4321',
+#               password_confirmation:'lima4321', full_name:'Peddie Dhor')
 user.save!
