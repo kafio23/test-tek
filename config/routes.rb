@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   post 'auth_user' => 'authentication#authenticate_user'
   root 'home#index'
   get "test", to: "home#test"
-  # get '/purchases', to: "purchase#index"
   resources :users
+  resources :purchases
   # resources :purchases, only:[:index, ] do
   # end
   # get 'home/index'
