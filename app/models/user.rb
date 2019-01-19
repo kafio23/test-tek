@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   # has_secure_password
   has_many :purchases
+  
+  ROLES= %w(admin user)
 end
