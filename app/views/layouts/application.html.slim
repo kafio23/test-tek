@@ -2,6 +2,7 @@ doctype html
 html
   head
     title Tektest
+    link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = csrf_meta_tags
@@ -25,9 +26,9 @@ html
           li class=(current_class?(purchases_path) ? 'nav-item active' : 'nav-item')
             a class="nav-link" href=purchases_path
               | Pedidos
-          li class="nav-item"
-            a class="nav-link" href="#"
-              | Link
+          li class=(current_class?(users_path) ? 'nav-item active' : 'nav-item')
+            a class="nav-link" href=users_path
+              | Usuarios
 
       / header.navbar
       /   .logo

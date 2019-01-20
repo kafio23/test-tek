@@ -1,5 +1,5 @@
 = simple_form_for([@purchase]) do |f|
-	= render "shared/form_errors", object: f.object
+	= render "layouts/form_errors", object: f.object
 
 	= f.input :description, label: 'Descripción', :input_html => { :class => "" }
 	= f.file_field :image, as: :file

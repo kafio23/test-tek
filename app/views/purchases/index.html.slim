@@ -1,5 +1,13 @@
-h1 
-	|Pedidos
+.row
+	.col-8
+		h1 
+			|Pedidos
+
+	.col-4
+		.float-right
+			= link_to new_purchase_path do
+				span class="fas fa-plus ffa-w-10 fa-2x align-middle"
+
 hr
 
 p#notice = notice
