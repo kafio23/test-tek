@@ -32,3 +32,6 @@
 
 # Database
 config/database.yml
+
+# Uploads
+/public/uploads

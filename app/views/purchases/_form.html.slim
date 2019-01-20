@@ -1,6 +1,7 @@
 = simple_form_for([@purchase]) do |f|
 
 	= f.input :description, label: 'Descripción', :input_html => { :class => "" }
+	= f.file_field :image, as: :file
 	= f.input :category, as: :select, collection: Purchase::CATEGORIES, label: 'Categorías'
 	= f.input :address, label: 'Dirección de destino', :input_html => { :class => "" }
 	= f.input :delivery_date, label: "Fecha de Envío", :start_year => 2018
