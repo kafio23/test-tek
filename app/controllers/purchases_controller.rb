@@ -1,4 +1,6 @@
 class PurchasesController < ApplicationController
+	before_action :set_purchase, only: [:show]
+
 	def index
 		@purchases = Purchase.all
 	end
@@ -21,7 +23,14 @@ class PurchasesController < ApplicationController
 		end
 	end
 
+	def show
+	end
+
 	private
+		def set_purchase
+			@purchase = Purchase.find(params[:id])
+		end
+
 		def purchase_params
 			params.require(:purchase).permit(:description, :category, :image, :user_id,
 				:status, :delivery_date, :reception_date)
