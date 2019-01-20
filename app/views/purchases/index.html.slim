@@ -1,15 +1,20 @@
-h1 Pedidos
+h1 
+	|Pedidos
+hr
+
+p#notice = notice
 
 .row
-- @purchases.each do |purchase|
-	.col-sm-3
-		.card-deck
-			.card
-				.img class="card-img-top" src=".../100px200/" alt="Card image cap"
-				.card-body
-					h5 class="card-title"
-						| Pedido ##{purchase.id}
-					p class="card-text"
-						= purchase.description
-				.card-footer
-					small class="text-muted" Last updated 3 mins ago
+	- @purchases.each do |purchase|
+		.col-sm-3
+			.card-deck
+				a class="card-link" href=purchase_path(purchase)
+					.card 
+						img class="card-img-top" src="#{ purchase.image }" alt="Card image cap" height="200px"
+						.card-body style="color: #212529;"
+							h5 class="card-title"
+								| Pedido ##{purchase.id}
+							p class="card-text"
+								= purchase.description
+						.card-footer
+							small class="text-muted" Last updated 3 mins ago

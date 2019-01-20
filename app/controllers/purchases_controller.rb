@@ -12,15 +12,11 @@ class PurchasesController < ApplicationController
 
 	def create
 		@purchase = Purchase.new(purchase_params)
-		respond_to do |format|
-			if @purchase.save
-				format.html { redirect_to request.referrer, notice: "El Pedido-#{@purchase.id} se creó correctamente." }
-        format.js
-			else
-				format.html { redirect_to request.referrer, alert: "Ocurrió un error: #{@purchase.errors}" }
-        format.js
-			end
-		end
+    if @purchase.save
+      redirect_to purchase_path(@purchase), notice: "El Pedido-#{@purchase.id} se creó correctamente."
+    else
+      render :new, alert: 'Error en:'
+    end
 	end
 
 	def show

@@ -1,2 +1,10 @@
 h1
-  | Pedido ##{@purchase.id}
+  |Pedido ##{@purchase.id}
+hr
+
+- if notice.present?
+  .alert.alert-info= notice
+
+h3 Descripción
+p 
+  =@purchase.description
