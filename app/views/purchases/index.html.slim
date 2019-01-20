@@ -1,14 +1,19 @@
-.row
-	.col-8
-		h1 
-			|Pedidos
-
-	.col-4
-		.float-right
-			= link_to new_purchase_path do
-				span class="fas fa-plus ffa-w-10 fa-2x align-middle"
+h1 
+	|Pedidos
 
 hr
+
+nav class="nav"
+  a class="nav-link" href=new_purchase_path style="font-size: 1.5rem"
+    p class="align-middle" style="color: #6c757d;"
+      |Nuevo 
+      span class="fas fa-plus ffa-w-10 fa-1x align-middle" style="color: #17a2b8;"
+  a class="nav-link" href=new_purchase_path style="font-size: 1.5rem"
+    span class="fas fa-list-ul ffa-w-10 fa-1x align-middle" style="color: #17a2b8;"
+  a class="nav-link" href=new_purchase_path style="font-size: 1.5rem"
+    span class="fas fa-grip-horizontal ffa-w-10 fa-1x align-middle" style="color: #17a2b8;"
+  / = link_to new_purchase_path, class: "nav-link" do
+	/ 	span class="fas fa-list-ul ffa-w-10 fa-2x align-middle" style="color: #17a2b8;"
 
 p#notice = notice
 
@@ -19,7 +24,7 @@ p#notice = notice
 				a class="card-link" href=purchase_path(purchase)
 					.card 
 						img class="card-img-top" src="#{ purchase.image }" alt="Card image cap" height="200px"
-						.card-body style="color: #212529;"
+						.card-body style="color: #212529; height: 150px"
 							h5 class="card-title"
 								| Pedido ##{purchase.id}
 							p class="card-text"
