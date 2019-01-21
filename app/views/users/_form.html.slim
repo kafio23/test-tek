@@ -1,0 +1,8 @@
+= simple_form_for([@user]) do |f|
+	= render "layouts/form_errors", object: f.object
+
+	= f.input :full_name, label: 'Nombre y Apellido', :input_html => { :class => "" }
+	= f.input :email, label: 'Email'
+    = f.input :password, label: 'Contraseña'
+
+	= f.submit "Guardar", class:"btn btn-info"

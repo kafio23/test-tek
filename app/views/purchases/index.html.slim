@@ -21,7 +21,11 @@ nav class="nav"
 		i class="fas fa-grip-horizontal ffa-w-10" style="font-size: 1.3rem; padding-right: 15px; color: #17a2b8;"
   
 
-p#notice = notice
+- if notice.present?
+  .alert.alert-info
+    = notice
+
+br
 
 - if params[:list_view].present?
 	= render "list", purchases: @purchases
