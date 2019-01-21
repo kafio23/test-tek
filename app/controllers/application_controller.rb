@@ -1,6 +1,13 @@
 class ApplicationController < ActionController::Base
   attr_reader :current_user
 
+  def mobile_device
+    agent = request.user_agent
+    return "tablet" if agent =~ /(tablet|ipad)|(android(?!.*mobile))/i
+    return "mobile" if agent =~ /Mobile/
+    return "desktop"
+  end
+
   protected
   def authenticate_request!
     unless user_id_in_token?
