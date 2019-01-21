@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "test", to: "home#test"
   resources :users
   resources :purchases
+  get "purchases-list", to: "purchases#list"
   # resources :purchases, only:[:index, ] do
   # end
   # get 'home/index'

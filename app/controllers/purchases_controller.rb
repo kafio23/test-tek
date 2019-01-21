@@ -5,6 +5,10 @@ class PurchasesController < ApplicationController
 		@purchases = Purchase.all
 	end
 
+	def list
+		@purchases = Purchase.all
+	end
+
 	def new
 		@purchase = Purchase.new
 		# authorize @purchase

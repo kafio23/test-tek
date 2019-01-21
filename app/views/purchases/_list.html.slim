@@ -1,0 +1,27 @@
+h1 
+	|Pedidos
+
+- if purchases.length > 0
+	.table-responsive
+		table class="table table-striped"
+			thead
+				tr
+					th scope="col"
+						|Nombre
+					th scope="col"
+						|Autor
+					th scope="col"
+						|Estado
+					th scope="col"
+						|Acción
+			tbody
+				- purchases.each do |purchase|
+					tr
+						th scope="row"
+							| Pedido-#{purchase.id}
+						td
+							=purchase.user.full_name
+						td
+							=purchase.status
+						td
+							|haha

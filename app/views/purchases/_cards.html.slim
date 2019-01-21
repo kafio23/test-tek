@@ -1,0 +1,14 @@
+.row
+	- purchases.each do |purchase|
+		.col-sm-3
+			.card-deck
+				a class="card-link" href=purchase_path(purchase)
+					.card 
+						img class="card-img-top" src="#{ purchase.image }" alt="Card image cap" height="200px"
+						.card-body style="color: #212529; height: 150px"
+							h5 class="card-title"
+								| Pedido ##{purchase.id}
+							p class="card-text"
+								= purchase.description
+						.card-footer
+							small class="text-muted" Last updated 3 mins ago
