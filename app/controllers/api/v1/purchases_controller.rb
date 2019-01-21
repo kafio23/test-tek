@@ -1,9 +1,12 @@
 class Api::V1::PurchasesController < ApplicationController
-	# before_action :set_article, only: [:show, :update, :destroy]
+  # before_action :set_article, only: [:show, :update, :destroy]
+  before_action :authenticate_request!
+  
 	def index
-		@purchase = Purchase.all
-		render json: @purchase
-	end
+		@purchases = Purchase.all
+		@purchases = current_user.purchases unless current_user.admin?
+		render json: @purchases
+  end
 	
 	def show
 	end

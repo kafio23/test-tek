@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :purchases
   
   ROLES= %w(admin user)
+
+  def admin?
+    role == 'admin'
+  end
 end
