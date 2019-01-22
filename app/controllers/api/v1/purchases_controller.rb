@@ -31,18 +31,21 @@ class Api::V1::PurchasesController < ApplicationController
       render json: @purchase.errors, status: :unprocessable_entity
     end
   end
-  #   # PATCH/PUT /purchases/1
-  #   def update
-  #    if @purchase.update(purchase_params)
-  #     render json: @purchase
-  #    else
-  #     render json: @purchase.errors, status: :unprocessable_entity
-  #    end
-  #   end
-  #  # DELETE /purchases/1
-  #   def destroy
-  #    @purchase.destroy
-  #   end
+  
+  # PATCH/PUT /purchases/1
+  def update
+    if @purchase.update(purchase_params)
+    render json: @purchase
+    else
+    render json: @purchase.errors, status: :unprocessable_entity
+    end
+  end
+  
+  # DELETE /purchases/1
+  def destroy
+    @purchase.destroy
+  end
+
   private
     def set_purchase
       @purchase = Purchase.find(params[:id])
