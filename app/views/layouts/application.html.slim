@@ -31,12 +31,17 @@ html
               li class=(current_class?(users_path) ? 'nav-item active' : 'nav-item')
                 a class="nav-link" href=users_path
                   | Usuarios
-            - else
-              li class=(current_class?(user_path(current_user)) ? 'nav-item active' : 'nav-item')
-                a class="nav-link" href=user_path(current_user)
-                  = current_user.full_name
+              li class=(current_class?(users_path) ? 'nav-item active' : 'nav-item')
+                a class="nav-link" href="#"
+                  | Sesiones
+
         .form-inline.my-2.my-lg-0
           - if logged_in?
+            = link_to user_path(current_user), class: 'purchase-link' do
+              span style="color: #fff;" 
+                = current_user.full_name 
+              i class="fas fa-user" style="font-size: 1.3rem; padding-right: 15px; color: #fff; padding-left: 5px;"
+
             = link_to logout_path, method: :delete, class: 'purchase-link' do
               span style="color: #fff;" 
                 |Log Out 
