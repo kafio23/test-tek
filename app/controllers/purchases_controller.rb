@@ -5,9 +5,9 @@ class PurchasesController < ApplicationController
 	def index
 		if logged_in?
 			if current_user.admin?
-				@purchases = Purchase.all 
+				@purchases = Purchase.all.order(:id)
 			else
-				@purchases = Purchase.where(user_id: current_user.id)
+				@purchases = Purchase.where(user_id: current_user.id).order(:id)
 			end
 		end
 	end

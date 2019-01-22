@@ -1,14 +1,25 @@
 .jumbotron
-	h1 
-		|Bienvenido! (:
-	
-	p class="lead"
-		|Esta web permite la administración de pedidos.
+	- if logged_in?
+		h1
+			|Bienvenido #{current_user.full_name}! (:
+		p class="lead"
+			|Esta web permite la administración de tus pedidos.
+	- else
+		h1 
+			|Bienvenido! (:
+		p class="lead"
+			|Esta web permite la administración de pedidos.
   
 	hr class="my-4"
 
-	p
-	 	|Para empezar, por favor inicia sesión.
-	a class="btn btn-info btn-lg" href=login_path role="button"
-	 	|Log in
+	- unless logged_in?
+		p
+			|Para empezar, por favor inicia sesión.
+		a class="btn btn-info btn-lg" href=login_path role="button"
+			|Log in
+
+	- if logged_in?
+		.btn-group
+			a class="btn btn-info btn-lg" href=purchases_path role="button"
+				|Ver Lista de Pedidos
 </div>

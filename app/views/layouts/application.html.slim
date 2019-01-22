@@ -34,7 +34,7 @@ html
             - else
               li class=(current_class?(user_path(current_user)) ? 'nav-item active' : 'nav-item')
                 a class="nav-link" href=user_path(current_user)
-                  | current_user.full_name
+                  = current_user.full_name
         .form-inline.my-2.my-lg-0
           - if logged_in?
             = link_to logout_path, method: :delete, class: 'purchase-link' do
