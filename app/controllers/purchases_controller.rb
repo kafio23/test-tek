@@ -1,8 +1,15 @@
 class PurchasesController < ApplicationController
+	include SessionsHelper
 	before_action :set_purchase, only: [:show]
 
 	def index
-		@purchases = Purchase.all
+		if logged_in?
+			if current_user.admin?
+				@purchases = Purchase.all 
+			else
+				@purchases = Purchase.where(user_id: current_user.id)
+			end
+		end
 	end
 
 	def list

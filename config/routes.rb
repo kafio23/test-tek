@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
   # devise_for :users
   post 'auth_user' => 'authentication#authenticate_user'
   root 'home#index'
