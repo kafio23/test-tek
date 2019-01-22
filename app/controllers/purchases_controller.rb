@@ -1,6 +1,6 @@
 class PurchasesController < ApplicationController
 	include SessionsHelper
-	before_action :set_purchase, only: [:show]
+	before_action :set_purchase, only: [:show, :edit, :update]
 
 	def index
 		if logged_in?
@@ -19,6 +19,17 @@ class PurchasesController < ApplicationController
 	def new
 		@purchase = Purchase.new
 		# authorize @purchase
+	end
+
+	def edit
+	end
+
+	def update
+		if @purchase.update purchase_params
+			redirect_to purchase_path(@purchase), notice: "El Pedido ##{@purchase.id} se modificó correctamente."
+		else
+			render :edit, alert: 'Error en:'
+		end
 	end
 
 	def create

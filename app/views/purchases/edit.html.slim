@@ -1,0 +1,12 @@
+h1 Editar Pedido ##{@purchase.id}
+hr
+
+- if notice.present?
+  .alert.alert-info
+    = notice
+
+== render 'form'
+hr
+a href=purchases_path class="back"
+	span class="fas fa-chevron-left" style="padding-right:10px;"
+	|regresar
