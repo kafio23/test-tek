@@ -8,6 +8,10 @@ nav class="nav"
 			span style="font-size: 1.3rem; color: #6c757d;" 
 				|Nuevo 
 			i class="fas fa-plus ffa-w-10" style="font-size: 1.3rem; padding-right: 15px; color: #17a2b8;"
+    = link_to edit_purchase_path(@purchase) do
+      span style="font-size: 1.3rem; color: #6c757d;" 
+        | Editar 
+      i class="fas fa-edit  ffa-w-10" style="font-size: 1.3rem; padding-right: 15px; color: #17a2b8;"
     = link_to purchases_path do
       span style="font-size: 1.3rem; color: #6c757d;" 
         | Ir a Pedidos 
