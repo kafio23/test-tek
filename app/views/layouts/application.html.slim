@@ -12,7 +12,7 @@ html
   body
     nav class="navbar navbar-expand-lg navbar-dark bg-info"
       a class="navbar-brand" href=root_path
-        | Navbar
+        | TEST-TEK
       button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
         span class="navbar-toggler-icon"
 
@@ -26,9 +26,20 @@ html
           li class=(current_class?(purchases_path) ? 'nav-item active' : 'nav-item')
             a class="nav-link" href=purchases_path
               | Pedidos
-          li class=(current_class?(users_path) ? 'nav-item active' : 'nav-item')
-            a class="nav-link" href=users_path
-              | Usuarios
+          - if logged_in? && current_user.admin?
+            li class=(current_class?(users_path) ? 'nav-item active' : 'nav-item')
+              a class="nav-link" href=users_path
+                | Usuarios
+        .form-inline.my-2.my-lg-0
+          - if logged_in?
+            a class="nav-link" href=root_path style="color: #fff;"
+              | Sign Out 
+              span class="fas fa-sign-out-alt" style="font-size: 1.3rem; padding-right: 15px; color: #fff;"
+          - else
+            a class="nav-link" href=root_path style="color: #fff;"
+              | Sign In 
+              span class="fas fa-sign-in-alt" style="font-size: 1.3rem; padding-right: 15px; color: #fff;"
+
 
       / header.navbar
       /   .logo
