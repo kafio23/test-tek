@@ -25,6 +25,8 @@ br
 						|Correo
 					th scope="col"
 						|Role
+					th scope="col"
+						|Acción
 			tbody
 				- @users.each do |user|
 					tr
@@ -36,4 +38,7 @@ br
 							=user.email
 						td
 							=user.role
+						td
+							=link_to edit_user_path(user) do
+								i class="fas fa-edit ffa-w-10" style="font-size: 1.3rem; padding-right: 15px; color: #17a2b8;"
 

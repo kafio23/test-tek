@@ -18,26 +18,32 @@ html
 
       div class="collapse navbar-collapse" id="navbarTogglerDemo02"
         ul class="navbar-nav mr-auto mt-2 mt-lg-0"
-          li class=(current_class?(root_path) ? 'nav-item active' : 'nav-item')
+          / li class=(current_class?(root_path) ? 'nav-item active' : 'nav-item')
             a class="nav-link" href=root_path
               | Home
               span class="sr-only" 
               | (current)
-          li class=(current_class?(purchases_path) ? 'nav-item active' : 'nav-item')
-            a class="nav-link" href=purchases_path
-              | Pedidos
-          - if logged_in? && current_user.admin?
-            li class=(current_class?(users_path) ? 'nav-item active' : 'nav-item')
-              a class="nav-link" href=users_path
-                | Usuarios
+          - if logged_in?
+            li class=(current_class?(purchases_path) ? 'nav-item active' : 'nav-item')
+              a class="nav-link" href=purchases_path
+                | Pedidos
+            - if current_user.admin?
+              li class=(current_class?(users_path) ? 'nav-item active' : 'nav-item')
+                a class="nav-link" href=users_path
+                  | Usuarios
+            - else
+              li class=(current_class?(user_path(current_user)) ? 'nav-item active' : 'nav-item')
+                a class="nav-link" href=user_path(current_user)
+                  | current_user.full_name
         .form-inline.my-2.my-lg-0
           - if logged_in?
-            a class="nav-link" href=root_path style="color: #fff;"
-              | Sign Out 
-              span class="fas fa-sign-out-alt" style="font-size: 1.3rem; padding-right: 15px; color: #fff;"
+            = link_to logout_path, method: :delete, class: 'purchase-link' do
+              span style="color: #fff;" 
+                |Log Out 
+              i class="fas fa-sign-out-alt" style="font-size: 1.3rem; padding-right: 15px; color: #fff;;"
           - else
-            a class="nav-link" href=root_path style="color: #fff;"
-              | Sign In 
+            a class="nav-link" href=login_path style="color: #fff;"
+              |Log In 
               span class="fas fa-sign-in-alt" style="font-size: 1.3rem; padding-right: 15px; color: #fff;"
 
 
