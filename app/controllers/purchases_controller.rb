@@ -1,6 +1,6 @@
 class PurchasesController < ApplicationController
 	include SessionsHelper
-	before_action :set_purchase, only: [:show, :edit, :update]
+	before_action :set_purchase, only: [:show, :edit, :update, :destroy]
 
 	def index
 		if logged_in?
@@ -43,6 +43,14 @@ class PurchasesController < ApplicationController
 
 	def show
 	end
+
+	def destroy
+		if @purchase.destroy
+			redirect_to purchases_path, notice: "Pedido ##{@purchase.id} eliminado."
+		else
+			redirect_to purchases_path, notice: "No se puede eliminar Pedido ##{@purchase.id}"
+		end
+  end
 
 	private
 		def set_purchase

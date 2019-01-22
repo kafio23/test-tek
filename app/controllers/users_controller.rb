@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update]
+	before_action :set_user, only: [:show, :edit, :update, :show]
 
 	def index
 		@users = User.all
@@ -31,6 +31,9 @@ class UsersController < ApplicationController
 		else
 			render :edit, alert: 'Error en:'
 		end
+	end
+
+	def show
 	end
 
 	private

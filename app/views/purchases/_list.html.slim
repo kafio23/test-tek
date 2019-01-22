@@ -23,3 +23,5 @@
 						td
 							=link_to edit_purchase_path(purchase) do
 								i class="fas fa-edit ffa-w-10" style="font-size: 1.3rem; padding-right: 15px; color: #17a2b8;"
+							=link_to purchase_path(purchase), method: :delete do
+								i class="fas fa-trash-alt ffa-w-10" style="font-size: 1.3rem; padding-right: 15px; color: #dc3545;"

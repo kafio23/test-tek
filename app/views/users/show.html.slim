@@ -1,0 +1,14 @@
+h1
+  |Hola #{@user.full_name}!
+hr
+
+- if notice.present?
+  .alert.alert-info= notice
+
+h3 Nombre
+p 
+	=@user.full_name
+
+h3 Email
+p 
+	=@user.email
