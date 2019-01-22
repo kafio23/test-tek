@@ -1,0 +1,12 @@
+h1 Editar Usuario
+hr
+
+- if notice.present?
+  .alert.alert-info
+    = notice
+
+== render 'form'
+hr
+a href=users_path class="back"
+	span uk-icon="fas fa-caret-left"
+	| regresar

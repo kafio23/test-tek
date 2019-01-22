@@ -3,6 +3,10 @@ h1
 
 hr
 
+- if notice.present?
+  .alert.alert-info
+    = notice
+
 nav class="nav"
 	.purchase-link
 		= link_to new_user_path, class: 'purchase-link' do
