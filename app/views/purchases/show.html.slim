@@ -21,3 +21,7 @@ br
 h3 Descripción
 p 
   =@purchase.description
+
+h3 Imagen
+- if @purchase.image.present?
+  img class="img-fluid img-thumbnail" src="#{ @purchase.image }" alt="Card image cap" width="200px"
