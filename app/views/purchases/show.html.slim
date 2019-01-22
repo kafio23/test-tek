@@ -2,8 +2,21 @@ h1
   |Pedido ##{@purchase.id}
 hr
 
+nav class="nav"
+	.purchase-link
+		= link_to new_purchase_path, class: 'purchase-link' do
+			span style="font-size: 1.3rem; color: #6c757d;" 
+				|Nuevo 
+			i class="fas fa-plus ffa-w-10" style="font-size: 1.3rem; padding-right: 15px; color: #17a2b8;"
+    = link_to purchases_path do
+      span style="font-size: 1.3rem; color: #6c757d;" 
+        | Ir a Pedidos 
+      i class="fas fa-grip-horizontal  ffa-w-10" style="font-size: 1.3rem; padding-right: 15px; color: #17a2b8;"
+
 - if notice.present?
   .alert.alert-info= notice
+
+br
 
 h3 Descripción
 p 
